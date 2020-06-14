@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 2;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+// feature to share with others
+%message-shared {
+    border: 1px dotted goldenrod;
+}
+
+// tell main to use the above feature
+main {
+    flex: 2;
+    @extend %message-shared;
+}
+
+header {
+    @extend %message-shared;
+}

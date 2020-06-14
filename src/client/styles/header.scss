@@ -2,4 +2,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+    &.navi {
+        float: right;
+    }
 }

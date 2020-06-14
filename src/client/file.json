@@ -1,0 +1,11 @@
+{
+    "greetings": [{
+            "hello": "How are you?",
+            "name": "Ben"
+        },
+        {
+            "hi": "Cool, you?",
+            "name": "Carter"
+        }
+    ]
+}
