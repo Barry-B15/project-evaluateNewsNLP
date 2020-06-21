@@ -11,11 +11,22 @@ module.exports = {
         library: 'Client'
     },
     devServer: {
+        //from github
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        host: 'localhost',
+
         port: 8081,
     },
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
+    // having error can't resolve 'fs' fix from github
+    /* target: 'node',
+    node: {
+        fs: 'empty',
+        net: 'empty'
+    },  */ // fix, end
     module: {
         rules: [{
                 test: /\.js$/,

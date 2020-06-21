@@ -32,3 +32,35 @@ section {
 footer {
     @extend %message-shared;
 }
+
+#nlp-response {
+    //using nesting to style parent and children
+    background: rgb(202, 199, 199);
+    padding: 1em;
+    border: 1px dotted red;
+    #nlp-result {
+        font-weight: 700;
+    }
+    li {
+        line-height: 1.3em;
+        padding: 0.5em 1em;
+    }
+    #polarity {
+        background: honeydew;
+    }
+    #polarity_confidence {
+        background: whitesmoke;
+    }
+    #subjectivity {
+        background: honeydew;
+    }
+    #subjectivity_confidence {
+        background: whitesmoke;
+    }
+    #text {
+        background: honeydew;
+    }
+    #error {
+        color: red;
+    }
+}
