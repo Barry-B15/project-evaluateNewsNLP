@@ -1,21 +1,23 @@
 //import { response } from "express" // no longer needed?
-import { checkForName } from './nameChecker.js'
+import { checkForName, validateURL } from './nameChecker.js'
 
-//const userUrl = require('valid-url'); // new
 
 const handleSubmit = function handleSubmit(event) {
     event.preventDefault()
 
 
-    let url = document.getElementById('name').value;
-    // if(Client.checkForName(url)) { console.log, fetch}
-    if (!url == '') {
+    //let url = document.getElementById('name').value;
+
+    checkURL();
+
+
+    /* if (!url == '') {
         Client.checkForName(url)
         console.log(url);
     } else {
         document.getElementById('error').innerHTML = 'Please, enter a valid url';
     }
-
+ */
 
     console.log("::: Form Submitted :::");
     fetch('http://localhost:8081/addNLP', {
@@ -41,12 +43,15 @@ const handleSubmit = function handleSubmit(event) {
         .catch('error in fetch: ', error)
 }
 
-function checkURL(inputURL) {
-    if (inputURL == '') {
-        throw new Error('Please enter a valid url', error);
-    }
+function checkURL() { // not serving any purpose, used for testing jest
 
-    // Do some other stuff
+    let url = document.getElementById('name').value;
+
+    if (Client.validateURL(url)) {
+        console.log(url);
+    } else {
+        document.getElementById('error').innerHTML = 'Please, enter a valid url';
+    }
 }
 /* const getnlpData = async(baseURL, data) => {
     console.log('GET nlpData', data);
