@@ -6,9 +6,16 @@ import { checkForName } from './nameChecker.js'
 const handleSubmit = function handleSubmit(event) {
     event.preventDefault()
 
+
     let url = document.getElementById('name').value;
-    Client.checkForName(url)
-    console.log(url);
+    // if(Client.checkForName(url)) { console.log, fetch}
+    if (!url == '') {
+        Client.checkForName(url)
+        console.log(url);
+    } else {
+        document.getElementById('error').innerHTML = 'Please, enter a valid url';
+    }
+
 
     console.log("::: Form Submitted :::");
     fetch('http://localhost:8081/addNLP', {
@@ -31,8 +38,16 @@ const handleSubmit = function handleSubmit(event) {
             document.getElementById('subjectivity_confidence').innerHTML = 'Subjectivity Confidence: ' + res.subjectivity_confidence;
             document.getElementById('text').innerHTML = 'Text Content: ' + res.text;
         })
+        .catch('error in fetch: ', error)
 }
 
+function checkURL(inputURL) {
+    if (inputURL == '') {
+        throw new Error('Please enter a valid url', error);
+    }
+
+    // Do some other stuff
+}
 /* const getnlpData = async(baseURL, data) => {
     console.log('GET nlpData', data);
 
@@ -95,5 +110,6 @@ const handleSubmit = function handleSubmit(event) {
 } */
 
 export {
-    handleSubmit
+    handleSubmit,
+    checkURL
 }

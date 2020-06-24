@@ -30,11 +30,15 @@ app.get('/', function(req, res) {
         // res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
+// use env for the port to select in localhost or when deployed
+const port = process.env.PORT || 8081;
+app.listen(port, () => console.log(`Starting server at: ${port}`));
+
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function() {
+/* app.listen(8081, function() {
     console.log('Example app listening on port 8081!')
 })
-
+ */
 app.get('/test', function(req, res) {
     res.send(mockAPIResponse)
 })
@@ -82,7 +86,7 @@ app.post('/addNLP', addNLP);
 
 function addNLP(req, res) {
     textapi.sentiment({
-        url: req.body.url, //projectData['nlpURL'],
+        url: req.body.url,
         mode: 'document'
     }, function(error, response) {
         res.send(response)
