@@ -21,7 +21,7 @@
     <main>
         <section>
             <form class="" onsubmit="return Client.handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" Client.onblur="onBlur()" placeholder="Name">
+                <input id="name" type="url" name="input" value="" Client.onblur="onBlur()" placeholder="Name">
                 <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
             </form>
         </section>
@@ -29,6 +29,16 @@
         <section>
             <strong>Form Results:</strong>
             <div id="results"></div>
+            <div id="nlp-response">
+                <ul id="nlp-results">
+                    <li id="polarity"></li>
+                    <li id="polarity_confidence"></li>
+                    <li id="subjectivity"></li>
+                    <li id="subjectivity_confidence"></li>
+                    <li id="text"></li>
+                    <li id="error"></li>
+                </ul>
+            </div>
         </section>
     </main>
 

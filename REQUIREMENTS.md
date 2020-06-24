@@ -10,13 +10,13 @@
 
 - [ done ] Have a minimum of one form field
 
-- [ ] Make one request to the Aylien API
+- [ done ] Make one request to the Aylien API
 
 - [ done ] Use Sass for styling
 
 - [ done ] Minify js and styles in the production environment
 
-- [ ] Response from the API must be added to the view for a user to see 
+- [ done ] Response from the API must be added to the view for a user to see 
 
 - [ ] Be able to show content offline
 

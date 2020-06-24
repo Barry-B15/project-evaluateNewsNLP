@@ -1,5 +1,8 @@
-import { checkForName } from './js/nameChecker'
+import { checkForName, validateURL } from './js/nameChecker'
 import { handleSubmit } from './js/formHandler'
+
+//new
+//import { displayNLP } from './js/formHandler'
 
 // import scss
 import './styles/resets.scss'
@@ -11,8 +14,10 @@ console.log(checkForName);
 
 alert("I EXIST")
 console.log("CHANGE!!");
+console.log(checkForName);
 
 export {
     checkForName,
-    handleSubmit
+    validateURL,
+    handleSubmit,
 }
