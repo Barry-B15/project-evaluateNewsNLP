@@ -1,5 +1,6 @@
 import { checkForName, validateURL } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
+import { handleSubmit, postnlpData } from './js/formHandler'
+
 
 //new
 //import { displayNLP } from './js/formHandler'
@@ -20,4 +21,5 @@ export {
     checkForName,
     validateURL,
     handleSubmit,
+    postnlpData,
 }

@@ -1,5 +1,6 @@
 //import { response } from "express" // no longer needed?
 import { checkForName, validateURL } from './nameChecker.js'
+import "regenerator-runtime/runtime";
 
 
 const handleSubmit = function handleSubmit(event) {
@@ -8,7 +9,10 @@ const handleSubmit = function handleSubmit(event) {
 
     let url = document.getElementById('name').value;
 
-    //checkURL();
+
+    checkURL();
+    Client.checkForName(url)
+
 
     /* if (!url == '') {
             Client.checkForName(url)
@@ -17,10 +21,20 @@ const handleSubmit = function handleSubmit(event) {
             document.getElementById('error').innerHTML = 'Please, enter a valid url';
         }
      */
-
+    //if (checkURL == null) {
     console.log("::: Form Submitted :::");
 
-    fetch('http://localhost:8081/addNLP', {
+    // call the nlp endpoint
+    postnlpData('http://localhost:8081/addNLP', url);
+
+
+    //} else {
+
+    //document.getElementById('err').innerHTML = 'URL Error: Something went wrong';
+    //}
+
+    //my working code
+    /* fetch('http://localhost:8081/addNLP', {
             method: 'POST',
             mode: 'cors',
             credentials: 'same-origin',
@@ -42,11 +56,11 @@ const handleSubmit = function handleSubmit(event) {
         })
         .catch('error in fetch: ', error);
 
-    checkURL(url);
+    checkURL(url); */
 
-}
+};
 
-function checkURL(userUrl) { // not serving any purpose, used for testing jest
+function checkURL() {
 
     let url = document.getElementById('name').value;
     const errorMsg = "Invalid url entered";
@@ -58,22 +72,9 @@ function checkURL(userUrl) { // not serving any purpose, used for testing jest
         document.getElementById('error').innerHTML = 'Please, enter a valid url';
     }
 }
-/* const getnlpData = async(baseURL, data) => {
-    console.log('GET nlpData', data);
 
-    const myURL = baseURL;
-
-    const res = await fetch(myURL, data);
-
-    try {
-        const myData = await res.json();
-        return myData;
-    } catch (err) {
-        console.log('getDataError', err);
-    }
-}
- */
-/* const postnlpData = async(url, input) => {
+// define an async test
+const postnlpData = async(url, input) => {
     const res = await fetch(url, {
         method: "POST",
         mode: "cors",
@@ -89,37 +90,28 @@ function checkURL(userUrl) { // not serving any purpose, used for testing jest
 
     try {
         const newData = await res.json();
-        console.log('POST', newData);
+
+        console.log('NEWDATA: ' + newData);
+
+        //if (res.status >= 200 && res.status < 400) {
+        //the ui update 
+        document.getElementById('polarity').innerHTML = 'Polarity: ' + newData.polarity; //in the
+        document.getElementById('polarity_confidence').innerHTML = 'Polarity_Confidence: ' + newData.polarity_confidence;
+        document.getElementById('subjectivity').innerHTML = 'Subjectivity: ' + newData.subjectivity;
+        document.getElementById('subjectivity_confidence').innerHTML = 'Subjectivity_Confidence: ' + newData.subjectivity_confidence;
+        document.getElementById('text').innerHTML = 'Text Content: ' + newData.text;
+        // }
         return newData;
+
     } catch (error) {
-        console.log('postError', error)
+        //catch print out the error to ui
+        document.getElementById('error').innerHTML = 'Please check your url and try again';
+        // console.log('postError', error)
     }
 }
- */
-
-
-/* const updateUI = async() => {
-    const request = await fetch('/textapi')
-
-    console.log('UPDATE UI')
-    try {
-        const allData = await request.json()
-
-        console.log('UI allData', +allData);
-
-        // display results to this list
-        document.getElementById('polarity').innerHTML = res.polarity; // data.polarity?
-        document.getElementById('polarity_confidence').innerHTML = res.polarity_confidence;
-        document.getElementById('subjectivity').innerHTML = res.subjectivity;
-        document.getElementById('subjectivity_confidence').innerHTML = res.subjectivity_confidence;
-        document.getElementById('text').innerHTML = res.text;
-
-    } catch (error) {
-        document.getElementById('error').innerHTML = "Something went wrong, check your request and try again";
-    }
-} */
 
 export {
     handleSubmit,
-    checkURL
+    checkURL,
+    postnlpData,
 }

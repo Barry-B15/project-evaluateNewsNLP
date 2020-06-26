@@ -86,12 +86,12 @@ app.post('/addNLP', addNLP);
 
 function addNLP(req, res) {
     textapi.sentiment({
-        url: req.body.url,
+        url: req.body.text,
         mode: 'document'
     }, function(error, response) {
         res.send(response)
         console.log({ 'POST Response': response })
-            //console.log({ 'POST Error': error })
+        console.log({ 'POST Error': error })
     })
 }
 
