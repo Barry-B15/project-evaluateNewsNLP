@@ -1,4 +1,4 @@
-function checkForName(inputText) {
+/* function checkForName(inputText) {
     console.log("::: Running checkForName :::", inputText);
     let names = [
             "Picard",
@@ -11,7 +11,7 @@ function checkForName(inputText) {
     if (names.includes(inputText)) {
         alert("Welcome, Captain!")
     }
-}
+} */
 
 function validateURL(inputUrl) { // https://stackoverflow.com/questions/1410311/regular-expression-for-url-validation-in-javascript
 
@@ -39,4 +39,4 @@ function validateURL(inputUrl) { // https://stackoverflow.com/questions/1410311/
     }
 }
 
-export { checkForName, validateURL }
+export { validateURL } //checkForName,

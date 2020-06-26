@@ -1,5 +1,5 @@
 //import { response } from "express" // no longer needed?
-import { checkForName, validateURL } from './nameChecker.js'
+import { validateURL } from './nameChecker.js' //checkForName,
 import "regenerator-runtime/runtime";
 
 
@@ -11,7 +11,8 @@ const handleSubmit = function handleSubmit(event) {
 
 
     checkURL();
-    Client.checkForName(url)
+    //Client.checkForName(url)
+    Client.validateURL(url)
 
 
     /* if (!url == '') {
@@ -21,19 +22,23 @@ const handleSubmit = function handleSubmit(event) {
             document.getElementById('error').innerHTML = 'Please, enter a valid url';
         }
      */
-    //if (checkURL == null) {
-    console.log("::: Form Submitted :::");
+    //++++++++++++++++++++++++++++++++++++++++++++++
+    if (checkURL) {
+        console.log("::: Form Submitted :::");
 
-    // call the nlp endpoint
-    postnlpData('http://localhost:8081/addNLP', url);
+        // call the nlp endpoint
+        postnlpData('http://localhost:8081/addNLP', url);
 
 
-    //} else {
+    } else {
 
-    //document.getElementById('err').innerHTML = 'URL Error: Something went wrong';
-    //}
+        document.getElementById('err').innerHTML = 'URL Error: Something went wrong';
+    }
+    //++++++++++++++++++++++++++++++++++++++++++++++end
 
-    //my working code
+    //my working code, I changed to use the async one 
+    //uncomment to use, comment the postnlpData block,
+    // then  (must change server addNLP to url: req.body.url to work)
     /* fetch('http://localhost:8081/addNLP', {
             method: 'POST',
             mode: 'cors',
