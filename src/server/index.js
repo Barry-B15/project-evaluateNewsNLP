@@ -91,8 +91,14 @@ function addNLP(req, res) {
     }, function(error, response) {
         res.send(response)
         console.log({ 'POST Response': response })
+            //console.log({ 'POST Error': error })
     })
 }
+
+//if page / route does not exist
+app.get("*", (req, res) => {
+    res.send("Page not found.")
+});
 
 /* app.post('/newsArticle', function(req, res) {
     console.log('POST');

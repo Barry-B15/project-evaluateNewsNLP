@@ -21,9 +21,11 @@
     <main>
         <section>
             <form class="" onsubmit="return Client.handleSubmit(event)">
-                <input id="name" type="url" name="input" value="" Client.onblur="onBlur()" placeholder="Name">
+                <input id="name" type="url" name="input" value="" Client.onblur="onBlur()" placeholder="Enter a url starting with http or https">
                 <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                <div id="error"></div>
             </form>
+
         </section>
 
         <section>
@@ -36,7 +38,7 @@
                     <li id="subjectivity"></li>
                     <li id="subjectivity_confidence"></li>
                     <li id="text"></li>
-                    <li id="error"></li>
+                    <li id="err"></li>
                 </ul>
             </div>
         </section>

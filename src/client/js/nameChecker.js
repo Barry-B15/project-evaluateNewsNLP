@@ -21,11 +21,14 @@ function validateURL(inputUrl) { // https://stackoverflow.com/questions/1410311/
     //2. /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
 
     //1. /.*/; 
+    let regex = new RegExp(urlRegexPattern); // now
 
 
     console.log("::: Running validateURL :::", inputUrl);
     // check for pattern:url match
-    if (urlRegexPattern.test(inputUrl)) {
+
+    if (regex.test(inputUrl)) {
+
         //alert("Url is valid");
         console.log("Valid url")
         return true;

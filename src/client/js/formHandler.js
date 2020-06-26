@@ -6,20 +6,20 @@ const handleSubmit = function handleSubmit(event) {
     event.preventDefault()
 
 
-    //let url = document.getElementById('name').value;
+    let url = document.getElementById('name').value;
 
-    checkURL();
-
+    //checkURL();
 
     /* if (!url == '') {
-        Client.checkForName(url)
-        console.log(url);
-    } else {
-        document.getElementById('error').innerHTML = 'Please, enter a valid url';
-    }
- */
+            Client.checkForName(url)
+            console.log(url);
+        } else {
+            document.getElementById('error').innerHTML = 'Please, enter a valid url';
+        }
+     */
 
     console.log("::: Form Submitted :::");
+
     fetch('http://localhost:8081/addNLP', {
             method: 'POST',
             mode: 'cors',
@@ -28,7 +28,7 @@ const handleSubmit = function handleSubmit(event) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ url })
+            body: JSON.stringify({ url }) //url
 
         })
         .then(res => res.json())
@@ -40,16 +40,21 @@ const handleSubmit = function handleSubmit(event) {
             document.getElementById('subjectivity_confidence').innerHTML = 'Subjectivity Confidence: ' + res.subjectivity_confidence;
             document.getElementById('text').innerHTML = 'Text Content: ' + res.text;
         })
-        .catch('error in fetch: ', error)
+        .catch('error in fetch: ', error);
+
+    checkURL(url);
+
 }
 
-function checkURL() { // not serving any purpose, used for testing jest
+function checkURL(userUrl) { // not serving any purpose, used for testing jest
 
     let url = document.getElementById('name').value;
+    const errorMsg = "Invalid url entered";
 
     if (Client.validateURL(url)) {
         console.log(url);
     } else {
+        console.log(errorMsg);
         document.getElementById('error').innerHTML = 'Please, enter a valid url';
     }
 }
