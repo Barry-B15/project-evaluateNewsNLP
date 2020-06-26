@@ -1,5 +1,5 @@
-import { handleSubmit, checkURL } from "./formHandler.js";
-import { checkForName } from "./nameChecker.js";
+import { handleSubmit, checkURL, postnlpData } from "./formHandler.js";
+
 
 
 
@@ -43,20 +43,6 @@ describe('test function(res) arrayContaining', () => {
     });
 });
 
-/* test('checkForName', () => {
-    result = checkForName('url'); //url;
-    let expectedResult = {
-        valid: true,
-        url: 'https://www.google.com/'
-    }
-    expect(result).toEqual(expectedResult)
-}); */
-
-/* test('checkForName matcher', () => { // moved to checkForName.test.js
-    const expected = { a: expect.any(Function) };
-    const received = { a: _link => _link };
-    expect(received).toEqual(expected);
-}); */
 
 test('formHandler matcher', () => { // https://github.com/facebook/jest/issues/8166
     const expected = {
@@ -94,3 +80,9 @@ test('throws on null', () => {
         expect(response).toContainEqual(fetchedResult);
     });
 }); */
+
+describe('postnlpData function should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
+    test('it should an async function', () => {
+        expect(postnlpData).toBeDefined();
+    });
+});
