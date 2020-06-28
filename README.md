@@ -40,7 +40,7 @@ This app was created using the following:
 * A little knowledge of how to download and install technologies on a computer via terminal or command line
 
 ## Launch - How to run the app
-this app has been deployed on [Heroku](https://www.heroku.com/)
+this app has been deployed on [Heroku](https://evaluate-newsnlp.herokuapp.com/)
 ### As a private server
 To run this app as a private server, the user will need to make the following installations:
 * Download and install node.js from: https://nodejs.org/en/download/
@@ -73,4 +73,4 @@ Run the development config
 - Youtube: https://youtu.be/VruEWq0t8pI
 
 ## Project status:
-This project has been completed and deployed on [Heroku](https://www.heroku.com/)
+This project has been completed and deployed on [Heroku](https://evaluate-newsnlp.herokuapp.com/) 
