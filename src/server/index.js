@@ -30,15 +30,14 @@ app.get('/', function(req, res) {
         // res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
-// use env for the port to select in localhost or when deployed
-const port = process.env.PORT || 8081;
-app.listen(port, () => console.log(`Starting server at: ${port}`));
+// use env to set which port the server to run on
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 8081;
+}
+app.listen(port);
+//app.listen(port, () => console.log(`Starting server at: ${port}`));
 
-// designates what port the app will listen to for incoming requests
-/* app.listen(8081, function() {
-    console.log('Example app listening on port 8081!')
-})
- */
 app.get('/test', function(req, res) {
     res.send(mockAPIResponse)
 })
