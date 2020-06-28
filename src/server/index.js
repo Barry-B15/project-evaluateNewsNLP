@@ -100,21 +100,4 @@ app.get("*", (req, res) => {
     res.send("Page not found.")
 });
 
-/* app.post('/newsArticle', function(req, res) {
-    console.log('POST');
-    console.log(req.body)
-    textapi.sentiment({
-        url: req.body.text,
-        mode: 'document'
-    }, function(error, response) {
-        //console.log('inside post function');
-        console.log(response);
-        res.send(response)
-        if (error === null) {
-            //console.log('inside error');
-            console.log(response);
-        }
-    })
-});
- */
 //module.exports = app;

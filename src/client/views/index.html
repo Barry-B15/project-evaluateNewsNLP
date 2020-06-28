@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>Test</title>
-    <!-- <script type="text/javascript" src="../../../dist/main.js"></script> -->
 </head>
 
 <body>
@@ -14,7 +13,7 @@
             Logo
         </div>
         <div class="navi">
-            navigation
+            Navigation
         </div>
     </header>
 
@@ -47,16 +46,6 @@
     <footer>
         <p>This is a footer</p>
     </footer>
-    <!-- <script>
-        // check that service workers are supported
-        if ('serviceWorker' in navigator) {
-
-            // use window load event to keep the page load performant
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
-    </script> -->
     <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
@@ -69,28 +58,3 @@
 </body>
 
 </html>
-
-<!-- 
-    const WorkboxPlugin = require('workbox-webpack-plugin');
-
-    new WorkboxPlugin.GenerateSW()
-
-    npm install workbox-webpack-plugin --save-dev
-
-    <script>
- // Check that service workers are supported
- if ('serviceWorker' in navigator) {
-     // Use the window load event to keep the page load performant
-     window.addEventListener('load', () => {
-         navigator.serviceWorker.register('/service-worker.js');
-     });
- }
-</script>
-
-
-
-
-getting runtime generate error
-install: npm i regenerator-runtime
-import to js: import "regenerator-runtime/runtime";
- -->

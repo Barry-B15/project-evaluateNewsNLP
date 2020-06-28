@@ -1,6 +1,5 @@
-//import { response } from "express" // no longer needed?
-import { validateURL } from './nameChecker.js' //checkForName,
-import "regenerator-runtime/runtime";
+import { validateURL } from './nameChecker.js'
+import "regenerator-runtime/runtime"; // fix for runtime issues when using async func stackoverflow
 
 
 const handleSubmit = function handleSubmit(event) {
@@ -14,15 +13,6 @@ const handleSubmit = function handleSubmit(event) {
     //Client.checkForName(url)
     Client.validateURL(url)
 
-
-    /* if (!url == '') {
-            Client.checkForName(url)
-            console.log(url);
-        } else {
-            document.getElementById('error').innerHTML = 'Please, enter a valid url';
-        }
-     */
-    //++++++++++++++++++++++++++++++++++++++++++++++
     if (checkURL) {
         console.log("::: Form Submitted :::");
 
@@ -34,34 +24,6 @@ const handleSubmit = function handleSubmit(event) {
 
         document.getElementById('err').innerHTML = 'URL Error: Something went wrong';
     }
-    //++++++++++++++++++++++++++++++++++++++++++++++end
-
-    //my working code, I changed to use the async one 
-    //uncomment to use, comment the postnlpData block,
-    // then  (must change server addNLP to url: req.body.url to work)
-    /* fetch('http://localhost:8081/addNLP', {
-            method: 'POST',
-            mode: 'cors',
-            credentials: 'same-origin',
-            cache: 'no-cache',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ url }) //url
-
-        })
-        .then(res => res.json())
-        .then(function(res) {
-            //updateUI();
-            document.getElementById('polarity').innerHTML = 'Polarity: ' + res.polarity;
-            document.getElementById('polarity_confidence').innerHTML = 'Polarity Confidence: ' + res.polarity_confidence;
-            document.getElementById('subjectivity').innerHTML = 'Subjectivity: ' + res.subjectivity;
-            document.getElementById('subjectivity_confidence').innerHTML = 'Subjectivity Confidence: ' + res.subjectivity_confidence;
-            document.getElementById('text').innerHTML = 'Text Content: ' + res.text;
-        })
-        .catch('error in fetch: ', error);
-
-    checkURL(url); */
 
 };
 
@@ -100,7 +62,7 @@ const postnlpData = async(url, input) => {
 
         //if (res.status >= 200 && res.status < 400) {
         //the ui update 
-        document.getElementById('polarity').innerHTML = 'Polarity: ' + newData.polarity; //in the
+        document.getElementById('polarity').innerHTML = 'Polarity: ' + newData.polarity;
         document.getElementById('polarity_confidence').innerHTML = 'Polarity_Confidence: ' + newData.polarity_confidence;
         document.getElementById('subjectivity').innerHTML = 'Subjectivity: ' + newData.subjectivity;
         document.getElementById('subjectivity_confidence').innerHTML = 'Subjectivity_Confidence: ' + newData.subjectivity_confidence;

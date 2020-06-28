@@ -1,9 +1,7 @@
-import { handleSubmit, checkURL, postnlpData } from "./formHandler.js";
+import { handleSubmit, checkURL, postnlpData } from "../client/js/formHandler.js";
 
-
-
-
-let result;
+// start with a dummy test
+/* let result;
 
 test('Dummy test', () => { // try a dummy test for trial
 
@@ -15,15 +13,10 @@ test('Dummy test', () => { // try a dummy test for trial
     expect(result).toBe(true); // test 2
     //expect(result).toBe(false); // this will fail cos we already set our result to true
 
-});
-
-/* test('handleSubmit', () => {
-    result = handleSubmit('url'); //url;
-    let expectedResult = { valid: true, url: 'https://www.google.com/' }
-    expect(result).toEqual(expectedResult)
 }); */
 
-describe('test, the const "handleSubmit" should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
+
+describe('handleSubmit, the const "handleSubmit" should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
     test('it should a function', () => {
         expect(handleSubmit).toBeDefined();
     });
@@ -54,7 +47,7 @@ test('formHandler matcher', () => { // https://github.com/facebook/jest/issues/8
     expect(received).toEqual(expected);
 });
 
-test('test that result contains polarity', () => {
+test('Dynamically update UI, test that result contains polarity', () => {
     const response = ['polarity', 'polarity_confidence', 'subjectivity',
         'subjectivity_confidence', 'text', 'error'
     ]
@@ -67,19 +60,6 @@ test('throws on null', () => {
     }
     expect(checkNull).toThrowError(Error);
 });
-
-/* describe('my fectched response', () => { // not working
-    test('has the desired responses', () => {
-        const response = ['polarity', 'polarity_confidence', 'subjectivity',
-            'subjectivity_confidence', 'text', 'error'
-        ]
-        const fetchedResult = {
-            polarity: true,
-            popular: false
-        };
-        expect(response).toContainEqual(fetchedResult);
-    });
-}); */
 
 describe('postnlpData function should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
     test('it should an async function', () => {
