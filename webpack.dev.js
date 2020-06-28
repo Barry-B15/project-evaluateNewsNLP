@@ -21,7 +21,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
-    // having error can't resolve 'fs' fix from github
+    // had error: can't resolve 'fs': fix from github
     /* target: 'node',
     node: {
         fs: 'empty',

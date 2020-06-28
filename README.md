@@ -40,7 +40,7 @@ This app was created using the following:
 * A little knowledge of how to download and install technologies on a computer via terminal or command line
 
 ## Launch - How to run the app
-this app has been deployed on [Heroku](https://www.heroku.com/)
+this app has been deployed on [Heroku](https://evaluate-newsnlp.herokuapp.com/)
 ### As a private server
 To run this app as a private server, the user will need to make the following installations:
 * Download and install node.js from: https://nodejs.org/en/download/
@@ -66,6 +66,11 @@ Run the development config
 - Download and install node.js from: https://nodejs.org/en/download/
 - Signup for the Aylien API key [Aylien-API-Key] (https://developer.aylien.com/signup)
 - Get the Aylien NLP API and get started at: https://docs.aylien.com/textapi/#getting-started
+- Validation at:  https://jestjs.io/docs/en/expect#tobedefined
+- URL Validation, Stackoverflow: https://stackoverflow.com/questions/1410311/regular-expression-for-url-validation-in-javascript
+- Runtime error fix: jony89@ https://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined
+- Github: https://github.com/facebook/jest/issues/8166
+- Youtube: https://youtu.be/VruEWq0t8pI
 
 ## Project status:
-This project has been completed and deployed on [Heroku](https://www.heroku.com/)
+This project has been completed and deployed on [Heroku](https://evaluate-newsnlp.herokuapp.com/) 

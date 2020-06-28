@@ -1,6 +1,6 @@
 import { validateURL } from "../client/js/nameChecker.js";
 
-const filterByTerm = require("../filterByTerm")
+const filterByTerm = require("../client/js/filterByTerm")
 
 test('validateURL matcher', () => {
     const expected = {
@@ -41,7 +41,7 @@ describe("validateURL function", () => {
             {
                 id: 3,
                 url: "https://www.url3.dev"
-            }, // "https://www.link3.dev"
+            },
             {
                 id: 4,
                 url: "https://www.url4.com"
