@@ -1,8 +1,8 @@
-import { checkForName, validateURL } from "../client/js/nameChecker.js";
+import { validateURL } from "../client/js/nameChecker.js";
 
 const filterByTerm = require("../filterByTerm")
 
-test('checkForName matcher', () => {
+test('validateURL matcher', () => {
     const expected = {
         a: expect.any(Function)
     };
@@ -12,9 +12,9 @@ test('checkForName matcher', () => {
     expect(received).toEqual(expected);
 });
 
-describe('checkForName function should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
+describe('valiadeURL function should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
     test('it should take inputText', () => {
-        expect(checkForName).toBeDefined();
+        expect(validateURL).toBeDefined();
     });
 });
 
@@ -27,7 +27,7 @@ describe("validateURL function should exist", () => {
 
 
 
-describe("checkForName function", () => {
+describe("validateURL function", () => {
     test("it should filter by a search term (link)", () => {
 
         const input = [{

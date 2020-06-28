@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.04% </span>
+                <span class="strong">11.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/23</span>
+                <span class='fraction'>3/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.04% </span>
+                <span class="strong">11.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/23</span>
+                <span class='fraction'>3/27</span>
             </div>
         
             
@@ -177,7 +177,8 @@
 <a name='L118'></a><a href='#L118'>118</a>
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
-<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,9 +190,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,11 +204,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -286,9 +291,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -298,7 +300,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//import { response } from "express" // no longer needed?
-import { checkForName, validateURL } from './nameChecker.js'
+import { validateURL } from './nameChecker.js' //checkForName,
 import "regenerator-runtime/runtime";
 &nbsp;
 &nbsp;
@@ -309,9 +311,9 @@ const handleSubmit = function <span class="fstat-no" title="function not covered
     let url = <span class="cstat-no" title="statement not covered" >document.getElementById('name').value;</span>
 &nbsp;
 &nbsp;
-    //checkURL();
-&nbsp;
+<span class="cstat-no" title="statement not covered" >    checkURL();</span>
     //Client.checkForName(url)
+<span class="cstat-no" title="statement not covered" >    Client.validateURL(url)</span>
 &nbsp;
 &nbsp;
     /* if (!url == '') {
@@ -321,19 +323,23 @@ const handleSubmit = function <span class="fstat-no" title="function not covered
             document.getElementById('error').innerHTML = 'Please, enter a valid url';
         }
      */
-    //if (checkURL == null) {
-<span class="cstat-no" title="statement not covered" >    console.log("::: Form Submitted :::");</span>
+    //++++++++++++++++++++++++++++++++++++++++++++++
+<span class="cstat-no" title="statement not covered" >    if (checkURL) {</span>
+<span class="cstat-no" title="statement not covered" >        console.log("::: Form Submitted :::");</span>
 &nbsp;
-    // call the nlp endpoint
-<span class="cstat-no" title="statement not covered" >    postnlpData('http://localhost:8081/addNLP', url);</span>
+        // call the nlp endpoint
+<span class="cstat-no" title="statement not covered" >        postnlpData('http://localhost:8081/addNLP', url);</span>
 &nbsp;
 &nbsp;
-    //} else {
+    } else {
 &nbsp;
-    //document.getElementById('err').innerHTML = 'URL Error: Something went wrong';
-    //}
+<span class="cstat-no" title="statement not covered" >        document.getElementById('err').innerHTML = 'URL Error: Something went wrong';</span>
+    }
+    //++++++++++++++++++++++++++++++++++++++++++++++end
 &nbsp;
-    //my working code
+    //my working code, I changed to use the async one 
+    //uncomment to use, comment the postnlpData block,
+    // then  (must change server addNLP to url: req.body.url to work)
     /* fetch('http://localhost:8081/addNLP', {
             method: 'POST',
             mode: 'cors',
@@ -410,9 +416,6 @@ const postnlpData = <span class="fstat-no" title="function not covered" >as</spa
     }
 }
 &nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 export {
     handleSubmit,
     checkURL,
@@ -424,7 +427,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 26 2020 19:34:32 GMT+0900 (Japan Standard Time)
+                at Sat Jun 27 2020 00:03:09 GMT+0900 (Japan Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
