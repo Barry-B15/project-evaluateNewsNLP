@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1593167672140" clover="3.2.0">
-  <project timestamp="1593167672140" name="All files">
-    <metrics statements="42" coveredstatements="9" conditionals="10" coveredconditionals="2" methods="7" coveredmethods="3" elements="59" coveredelements="14" complexity="0" loc="42" ncloc="42" packages="2" files="3" classes="3"/>
+<coverage generated="1593183789244" clover="3.2.0">
+  <project timestamp="1593183789244" name="All files">
+    <metrics statements="42" coveredstatements="9" conditionals="10" coveredconditionals="2" methods="6" coveredmethods="3" elements="58" coveredelements="14" complexity="0" loc="42" ncloc="42" packages="2" files="3" classes="3"/>
     <package name="src">
       <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="filterByTerm.js" path="C:\Users\barry\Desktop\project-evaluateNewsNLP\src\filterByTerm.js">
@@ -15,39 +15,39 @@
       </file>
     </package>
     <package name="src.client.js">
-      <metrics statements="36" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="1"/>
+      <metrics statements="36" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="1"/>
       <file name="formHandler.js" path="C:\Users\barry\Desktop\project-evaluateNewsNLP\src\client\js\formHandler.js">
-        <metrics statements="23" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <metrics statements="27" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="69" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="78" count="1" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="92" count="0" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
-        <line num="95" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="73" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
         <line num="99" count="0" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
-        <line num="101" count="0" type="stmt"/>
-        <line num="102" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
+        <line num="104" count="0" type="stmt"/>
         <line num="105" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
         <line num="109" count="0" type="stmt"/>
+        <line num="113" count="0" type="stmt"/>
       </file>
       <file name="nameChecker.js" path="C:\Users\barry\Desktop\project-evaluateNewsNLP\src\client\js\nameChecker.js">
-        <metrics statements="13" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="12" count="0" type="stmt"/>
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="19" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
