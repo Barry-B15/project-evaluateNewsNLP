@@ -1,6 +1,6 @@
 import { validateURL } from "../client/js/nameChecker.js";
 
-const filterByTerm = require("../client/js/filterByTerm")
+const filterByTerm = require("../filterByTerm")
 
 test('validateURL matcher', () => {
     const expected = {
@@ -24,8 +24,6 @@ describe("validateURL function should exist", () => {
         expect(validateURL).toBeDefined();
     });
 });
-
-
 
 describe("validateURL function", () => {
     test("it should filter by a search term (link)", () => {
