@@ -74,3 +74,4 @@ Run the development config
 
 ## Project status:
 This project has been completed and deployed on [Heroku](https://evaluate-newsnlp.herokuapp.com/) 
+Deployed successfully but getting error on Heroku at the moment, need help fixing.

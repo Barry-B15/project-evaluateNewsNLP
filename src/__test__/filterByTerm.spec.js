@@ -1,5 +1,5 @@
 const { TestScheduler } = require("jest")
-const filterByTerm = require("../client/js/filterByTerm")
+const filterByTerm = require("../filterByTerm")
 
 describe("Filter function", () => {
     test("it should filter by a search term (link)", () => {
