@@ -1,41 +1,30 @@
 import { handleSubmit, checkURL, postnlpData } from "../client/js/formHandler.js";
 
-// start with a dummy test
-/* let result;
-
-test('Dummy test', () => { // try a dummy test for trial
-
-    // we can run multiple tests in one file
-    result = 2 * 3;
-    expect(result).toBe(6); // test 1
-
-    result = true;
-    expect(result).toBe(true); // test 2
-    //expect(result).toBe(false); // this will fail cos we already set our result to true
-
-}); */
-
 
 describe('handleSubmit, the const "handleSubmit" should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
     test('it should a function', () => {
         expect(handleSubmit).toBeDefined();
     });
 });
-
+/* //dropping this test
 describe('test function(res) arrayContaining', () => {
     const expected = ['polarity', 'polarity_confidence', 'subjectivity',
         'subjectivity_confidence', 'text'
     ];
     it('matches even if received contains additional elements', () => {
-        expect(['polarity', 'polarity_confidence', 'subjectivity',
-            'subjectivity_confidence', 'text', 'error'
-        ]).toEqual(expect.arrayContaining(expected));
+        expect(
+            ['polarity', 'polarity_confidence', 'subjectivity',
+                'subjectivity_confidence', 'text', 'error'
+            ]
+        ).toEqual(expect.arrayContaining(expected));
     });
     it('does not match if received does not contain expected elements', () => {
-        expect(['Bob', 'Eve']).not.toEqual(expect.arrayContaining(expected));
+        expect(['polarity_confidence', 'subjectivity',
+            'subjectivity_confidence', 'text', 'error'
+        ]).not.toEqual(expect.arrayContaining(expected));
     });
 });
-
+ */
 
 test('formHandler matcher', () => { // https://github.com/facebook/jest/issues/8166
     const expected = {

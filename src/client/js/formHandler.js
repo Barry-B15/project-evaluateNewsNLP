@@ -8,12 +8,7 @@ const handleSubmit = function handleSubmit(event) {
 
     let url = document.getElementById('name').value;
 
-
-    checkURL();
-    //Client.checkForName(url)
-    Client.validateURL(url)
-
-    if (checkURL) {
+    if (checkURL(url) == true) {
         console.log("::: Form Submitted :::");
 
         // call the nlp endpoint
@@ -27,13 +22,13 @@ const handleSubmit = function handleSubmit(event) {
 
 };
 
-function checkURL() {
+function checkURL(inputUrl) {
 
-    let url = document.getElementById('name').value;
+    //let url = document.getElementById('name').value;
     const errorMsg = "Invalid url entered";
 
-    if (Client.validateURL(url)) {
-        console.log(url);
+    if (Client.validateURL(inputUrl)) {
+        console.log(inputUrl);
     } else {
         console.log(errorMsg);
         document.getElementById('error').innerHTML = 'Please, enter a valid url';
