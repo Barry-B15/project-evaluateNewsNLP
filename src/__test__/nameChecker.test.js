@@ -1,5 +1,8 @@
 import { validateURL } from "../client/js/nameChecker.js";
 
+window.alert = jest.fn();
+//fix window.alert error in test, clear the mock in true
+
 const filterByTerm = require("../filterByTerm")
 
 test('validateURL matcher', () => {
@@ -12,17 +15,36 @@ test('validateURL matcher', () => {
     expect(received).toEqual(expected);
 });
 
-describe('valiadeURL function should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
+describe('validateURL function should exist', () => { // https://jestjs.io/docs/en/expect#tobedefined
     test('it should take inputText', () => {
         expect(validateURL).toBeDefined();
     });
 });
 
+/* //Does the same as the one above so I think this is not necessary
 describe("validateURL function should exist", () => {
     test("it should match url with regular expression", () => {
-
         expect(validateURL).toBeDefined();
     });
+}); */
+describe("validateURL function", () => {
+    let result;
+
+    test("Is true", () => {
+
+        result = validateURL("https://www.example.com");
+        expect(result).toEqual(true);
+
+        //clear the mock window.alert
+        window.alert.mockClear();
+    });
+
+    test("Is false", () => {
+        result = validateURL("");
+        expect(result).toEqual(false);
+    })
+
+
 });
 
 describe("validateURL function", () => {

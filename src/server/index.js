@@ -31,10 +31,10 @@ app.get('/', function(req, res) {
 })
 
 // use env to set which port the server to run on
-let port = process.env.PORT;
-if (port == null || port == "") {
+let port = process.env.PORT || 8081;
+/* if (port == null || port == "") {
     port = 8081;
-}
+} */
 app.listen(port);
 //app.listen(port, () => console.log(`Starting server at: ${port}`));
 
@@ -64,7 +64,7 @@ textapi.sentiment({
 });
 
 //classify endpoint
-textapi.classify({
+/* textapi.classify({
     //'text': 'John is a very good football player!'
     'url': "http: //techcrunch.com/2015/07/16/microsoft-will-never-give-up-on-mobile ",
     //add a url to test
@@ -74,7 +74,7 @@ textapi.classify({
             console.log(c);
         });
     }
-});
+}); */
 
 
 app.get('/textapi', function(req, res) {
@@ -88,9 +88,12 @@ function addNLP(req, res) {
         url: req.body.text,
         mode: 'document'
     }, function(error, response) {
+        if (error) {
+            console.log({ 'POST Error': error })
+        }
         res.send(response)
         console.log({ 'POST Response': response })
-        console.log({ 'POST Error': error })
+
     })
 }
 
